@@ -1,0 +1,238 @@
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ================= FUNDO ================= */
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #4f46e5, #9333ea);
+}
+
+/* ================= HEADER ================= */
+.header {
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(10px);
+    padding: 28px 40px;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.header h1 {
+    font-size: 28px;
+    font-weight: 650;
+    text-align: center;
+}
+
+/* ================= NAV ================= */
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+.logout {
+    color: #fecaca;
+}
+
+/* ================= CONTAINER ================= */
+.container {
+    max-width: 1000px;
+    margin: 140px auto;
+    background: rgba(255, 255, 255, 0.88);
+    padding: 60px;
+    border-radius: 40px;
+    box-shadow: 0 20px 40px rgba(4, 4, 4, 0.22);
+}
+
+/* ================= FOOTER ================= */
+.footer {
+    margin-top: 150px;
+    text-align: center;
+    padding: 22px;
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    backdrop-filter: blur(6px);
+}
+
+/* ================= TÍTULOS ================= */
+.title {
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #4f46e5;
+    font-weight: 700;
+}
+
+/* ================= CARDS ================= */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.card {
+    background: #f9fafb;
+    padding: 22px;
+    border-radius: 14px;
+    box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 30px rgba(0,0,0,0.18);
+}
+
+/* ================= INDEX ================= */
+.quiz-list-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.quiz-title {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* ================= QUIZ ================= */
+.quiz-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.quiz-card {
+    max-width: 600px;
+    width: 100%;
+}
+
+.quiz-question {
+    margin-bottom: 25px;
+    font-size: 20px;
+    color: #333;
+}
+
+.quiz-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.option:hover {
+    background: #f5f3ff;
+    border-color: #6366f1;
+}
+
+.option input {
+    accent-color: #4f46e5;
+}
+
+/* ================= BOTÕES ================= */
+.btn {
+    padding: 10px 22px;
+    border-radius: 6px;
+    background: #4f46e5;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background: #4338ca;
+    transform: translateY(-2px);
+}
+
+.btn.danger {
+    background: #dc2626;
+}
+
+.btn.danger:hover {
+    background: #b91c1c;
+}
+
+/* ================= RESULTADO ================= */
+.resultado {
+    max-width: 500px;
+    margin: 60px auto 0;
+    padding: 60px 50px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.resultado .btn {
+    margin-top: 30px;
+    align-self: center;
+}
+
+.success {
+    color: #16a34a;
+}
+
+.error {
+    color: #dc2626;
+}
+
+/* ================= ADMIN ================= */
+.admin-page .nav {
+    display: none; /* 🔥 REMOVE INÍCIO E LOGOUT NO ADMIN */
+}
+
+.admin-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-card p {
+    max-width: 70%;
+    font-weight: 600;
+}
+
+/* ================= RESPONSIVO ================= */
+@media (max-width: 700px) {
+    .container {
+        padding: 35px;
+        margin: 100px 20px;
+    }
+}

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="admin-page">
+
+  <h2 class="title">Painel Administrativo</h2>
+
+  <!-- FORMULÁRIO DE CADASTRO -->
+  <div class="card admin-form">
+    <form method="post">
+      <input type="text" name="pergunta" placeholder="Pergunta" required>
+
+      <input type="text" name="a" placeholder="Opção A" required>
+      <input type="text" name="b" placeholder="Opção B" required>
+      <input type="text" name="c" placeholder="Opção C" required>
+      <input type="text" name="d" placeholder="Opção D" required>
+
+      <input type="text" name="correta" placeholder="Correta (A, B, C ou D)" required>
+
+      <button class="btn primary" type="submit">
+        Cadastrar Pergunta
+      </button>
+    </form>
+  </div>
+
+  <!-- LISTA DE QUESTÕES -->
+  <div class="cards">
+    {% for q in questoes %}
+      <div class="card admin-card">
+        <p>{{ q.pergunta }}</p>
+        <a class="btn danger" href="{{ url_for('delete', id=q.id) }}">
+          Excluir
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+
+</div>
+{% endblock %}

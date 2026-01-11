@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Educacional</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header class="header">
+  <h1>📚 Plataforma de Quizzes Educacionais</h1>
+
+  <nav class="nav">
+    <a href="{{ url_for('index') }}" class="nav-link">Início</a>
+
+    {% if current_user.is_authenticated %}
+      {% if current_user.is_admin %}
+        <a href="{{ url_for('admin') }}" class="nav-link">Admin</a>
+      {% endif %}
+      <a href="{{ url_for('logout') }}" class="nav-link logout">Logout</a>
+    {% else %}
+      <a href="{{ url_for('login') }}" class="nav-link">Login</a>
+    {% endif %}
+  </nav>
+</header>
+
+<main class="container">
+  {% block content %}{% endblock %}
+</main>
+
+<footer class="footer">
+  <p>Projeto Educacional Inclusivo • Flask & Python</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card resultado">
+
+  {% if correta %}
+    <h2 class="success">✅ Parabéns!</h2>
+    <p>Você acertou a questão.</p>
+  {% else %}
+    <h2 class="error">❌ Não foi dessa vez</h2>
+    <p>
+      A resposta correta era:
+      <strong>{{ correta_real }}</strong>
+    </p>
+  {% endif %}
+
+  <div class="resultado-actions">
+    <a class="btn primary" href="{{ url_for('index') }}">
+      Voltar aos quizzes
+    </a>
+  </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="quiz-wrapper">
+  <div class="card quiz-card">
+    <h2 class="quiz-question">{{ questao.pergunta }}</h2>
+
+    <form method="post" class="quiz-form">
+      
+      <label class="option">
+        <input type="radio" name="resposta" value="A" required>
+        <span>A {{ questao.opcao_a }}</span>
+      </label>
+
+      <label class="option">
+        <input type="radio" name="resposta" value="B">
+        <span>B {{ questao.opcao_b }}</span>
+      </label>
+
+      <label class="option">
+        <input type="radio" name="resposta" value="C">
+        <span>C {{ questao.opcao_c }}</span>
+      </label>
+
+      <label class="option">
+        <input type="radio" name="resposta" value="D">
+        <span>D {{ questao.opcao_d }}</span>
+      </label>
+
+      <div class="quiz-actions">
+        <button class="btn primary" type="submit">Enviar resposta</button>
+        <a href="{{ url_for('index') }}" class="btn secondary">Voltar</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

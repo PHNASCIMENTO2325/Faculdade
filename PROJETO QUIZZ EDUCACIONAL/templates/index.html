@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="title">📋 Quizzes disponíveis</h2>
+
+<div class="cards">
+  {% for q in questoes %}
+    <div class="card quiz-list-card">
+      <p class="quiz-title">{{ q.pergunta }}</p>
+
+      <a class="btn primary" href="{{ url_for('quiz', id=q.id) }}">
+        Responder
+      </a>
+    </div>
+  {% else %}
+    <div class="card">
+      <p>Nenhum quiz disponível no momento.</p>
+      <p>Volte em breve 😊</p>
+    </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
